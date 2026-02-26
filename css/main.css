@@ -559,20 +559,44 @@ video.project-img {
         top: 1rem;
         right: 1.5rem;
         left: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 3rem);
+    }
+
+    .header-left,
+    .header-right {
+        flex: 1;
+    }
+
+    .theme-toggle {
+        position: static;
+        /* Remove absolute positioning */
+        transform: none;
+        margin: 0 1rem;
+        flex-shrink: 0;
     }
 
     .header-text {
         font-size: 0.6rem;
+        white-space: nowrap;
     }
 
     /* --- HERO MOBILE --- */
     .hero {
-        height: 80vh;
-        padding: 0 1.5rem;
+        height: 70vh;
+        /* Slightly shorter hero container */
+        padding: 0;
+        overflow: hidden;
+        /* Allow GIF to bleed if needed */
     }
 
     .hero-media {
-        width: 100%;
+        width: 120%;
+        /* Larger GIF as requested */
+        max-width: none;
+        margin-bottom: 2rem;
     }
 
     .hero-title {
