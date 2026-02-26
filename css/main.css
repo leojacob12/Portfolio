@@ -597,6 +597,8 @@ video.project-img {
         /* Larger GIF as requested */
         max-width: none;
         margin-bottom: 2rem;
+        aspect-ratio: 16 / 9;
+        /* Reserviert Platz vor dem Laden */
     }
 
     .hero-title {
@@ -655,6 +657,13 @@ video.project-img {
     .project-gallery {
         max-width: 100% !important;
         height: auto;
+        aspect-ratio: 16 / 9;
+        /* Reserviert Platz für Bilder/Videos */
+        background-color: rgba(255, 255, 255, 0.03);
+        /* Dezenter Platzhalter */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .project-img,
