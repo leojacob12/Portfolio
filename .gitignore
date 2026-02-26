@@ -1,5 +1,8 @@
 .DS_Store
 ._*
-.vscode/
+.Spotlight-V100
+.Trashes
+Thumbs.db
 node_modules/
-*.log
+dist/
+.env
