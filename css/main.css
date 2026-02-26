@@ -546,21 +546,124 @@ video.project-img {
 }
 
 @media (max-width: 768px) {
-    .info-group {
-        flex-direction: column;
-        gap: 0.5rem;
+    body {
+        cursor: auto;
+        /* Standard cursor on touch devices */
     }
 
-    .info-label {
-        flex: auto;
-        opacity: 0.6;
-        font-size: 0.7rem;
+    .custom-cursor {
+        display: none !important;
     }
-}
 
-@media (max-width: 768px) {
+    .site-header {
+        top: 1rem;
+        right: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .header-text {
+        font-size: 0.6rem;
+    }
+
+    /* --- HERO MOBILE --- */
+    .hero {
+        height: 80vh;
+        padding: 0 1.5rem;
+    }
+
+    .hero-media {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 0.9rem;
+    }
+
+    /* --- PROJECTS MOBILE --- */
+    .project {
+        position: relative;
+        /* Break sticky on mobile to allow long scrolling content */
+        top: 0;
+        height: auto;
+        min-height: auto;
+        padding: 6vh 1.5rem 4rem 1.5rem;
+        border-top: var(--border-width) solid var(--border-color);
+        margin-bottom: 0;
+    }
+
+    .project:last-child {
+        margin-bottom: 0;
+    }
+
+    #portfolio-container {
+        padding-top: 2vh;
+    }
+
     .project-tab {
         width: calc(100% - 3rem) !important;
         left: 1.5rem !important;
+        height: 1.8rem;
+    }
+
+    .project-content {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+    }
+
+    .project-galleries {
+        flex-direction: column;
+        gap: 2rem;
+        overflow: visible;
+        flex: none;
+    }
+
+    .project-galleries[data-layout="grid-2x2"],
+    .project-galleries[data-dual="true"] {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .project-gallery {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    .project-img,
+    .placeholder-img,
+    video.project-img {
+        max-height: 70vh;
+        /* Allow images to be taller on mobile */
+        width: 100%;
+    }
+
+    .project-galleries[data-layout="grid-2x2"] .project-img {
+        max-height: 70vh;
+    }
+
+    /* --- INFO SECTION MOBILE --- */
+    .contact-section {
+        position: relative;
+        padding: 8vh 1.5rem;
+    }
+
+    .info-group {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    .info-label {
+        flex: none;
+        opacity: 0.6;
+        font-size: 0.7rem;
+    }
+
+    .info-content {
+        font-size: 0.9rem;
     }
 }
