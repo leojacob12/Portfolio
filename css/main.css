@@ -657,10 +657,18 @@ video.project-img {
     .project-gallery {
         max-width: 100% !important;
         height: auto;
-        /* Kein festes aspect-ratio — jedes Medium bestimmt seine eigene Höhe */
+        /* Reserviert Platz vor dem Laden, springt danach nicht */
+        min-height: 50vw;
+        background-color: rgba(128, 128, 128, 0.06);
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    /* Sobald ein Bild geladen ist, Platzhalter-Hintergrund entfernen */
+    .project-gallery:has(img[src]:not([src=""])),
+    .project-gallery:has(video[src]:not([src=""])) {
+        background-color: transparent;
     }
 
     .project-img,
