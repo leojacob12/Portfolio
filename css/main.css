@@ -642,7 +642,7 @@ video.project-img {
 
     .project-galleries {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.25rem;
         overflow: visible;
         flex: none;
     }
@@ -651,16 +651,13 @@ video.project-img {
     .project-galleries[data-dual="true"] {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.25rem;
     }
 
     .project-gallery {
         max-width: 100% !important;
         height: auto;
-        aspect-ratio: 16 / 9;
-        /* Reserviert Platz für Bilder/Videos */
-        background-color: rgba(255, 255, 255, 0.03);
-        /* Dezenter Platzhalter */
+        /* Kein festes aspect-ratio — jedes Medium bestimmt seine eigene Höhe */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -669,13 +666,14 @@ video.project-img {
     .project-img,
     .placeholder-img,
     video.project-img {
-        max-height: 70vh;
-        /* Allow images to be taller on mobile */
         width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
     }
 
     .project-galleries[data-layout="grid-2x2"] .project-img {
-        max-height: 70vh;
+        max-height: 60vh;
     }
 
     /* --- INFO SECTION MOBILE --- */
