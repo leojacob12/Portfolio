@@ -656,13 +656,15 @@ video.project-img {
 
     .project-gallery {
         max-width: 100% !important;
+        width: 100%;
         height: auto;
-        /* Reserviert Platz vor dem Laden, springt danach nicht */
-        min-height: 50vw;
+        /* Stable aspect ratio based on scans (A-format landscape) */
+        aspect-ratio: 1.414 / 1;
         background-color: rgba(128, 128, 128, 0.06);
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
 
     /* Sobald ein Bild geladen ist, Platzhalter-Hintergrund entfernen */
