@@ -309,7 +309,7 @@ body.light-mode .hero-gif-light {
 
 .project-gallery {
     position: relative;
-    max-width: 80%;
+    max-width: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -333,7 +333,7 @@ body.light-mode .hero-gif-light {
 
 .project-content {
     margin-bottom: 2rem;
-    max-width: 50%;
+    max-width: 100%;
     text-align: left;
     flex-shrink: 0;
     /* Prevent text squishing */
