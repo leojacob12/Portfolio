@@ -137,7 +137,8 @@ body.light-mode .hero-gif-light {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
+    height: 95%;
+    /* Enlarge GIF */
     object-fit: contain;
 }
 
@@ -146,6 +147,153 @@ body.light-mode .hero-gif-light {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+/* --- INTERACTIVE GRAINS --- */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.grains-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.grain {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, filter 0.3s ease;
+    filter: blur(0.5px);
+    animation: drift 12s infinite ease-in-out;
+}
+
+/* Larger hit area for easier clicking */
+.grain::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    pointer-events: auto;
+}
+
+.grain::after {
+    content: attr(data-number);
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.6rem;
+    font-family: inherit;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.light-mode .grain {
+    background-color: black;
+}
+
+.grain:hover {
+    transform: scale(3.5);
+    filter: blur(0px);
+}
+
+.grain:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
+
+.header-text {
+    cursor: pointer;
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    33% {
+        transform: translate(15px, -10px);
+    }
+
+    66% {
+        transform: translate(-10px, 15px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Positionen der 9 Körner */
+.grain:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.grain:nth-child(2) {
+    top: 25%;
+    left: 75%;
+    animation-delay: -2s;
+}
+
+.grain:nth-child(3) {
+    top: 50%;
+    left: 15%;
+    animation-delay: -4s;
+}
+
+.grain:nth-child(4) {
+    top: 80%;
+    left: 25%;
+    animation-delay: -1s;
+}
+
+.grain:nth-child(5) {
+    top: 45%;
+    left: 45%;
+    animation-delay: -7s;
+}
+
+.grain:nth-child(6) {
+    top: 15%;
+    left: 55%;
+    animation-delay: -3s;
+}
+
+.grain:nth-child(7) {
+    top: 75%;
+    left: 80%;
+    animation-delay: -5s;
+}
+
+.grain:nth-child(8) {
+    top: 60%;
+    left: 65%;
+    animation-delay: -9s;
+}
+
+.grain:nth-child(9) {
+    top: 30%;
+    left: 40%;
+    animation-delay: -6s;
 }
 
 /* --- STACKED FOLDER --- */
@@ -332,6 +480,8 @@ body.light-mode .hero-gif-light {
 }
 
 .project-content {
+    margin-top: 1rem;
+    /* 3mm adjustment */
     margin-bottom: 2rem;
     max-width: 100%;
     text-align: left;

@@ -283,4 +283,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial check on load
     checkProjectOverlap();
+
+    /* --- GRAIN NAVIGATION --- */
+    const grains = document.querySelectorAll('.grain');
+    grains.forEach(grain => {
+        grain.addEventListener('click', (e) => {
+            const projectId = grain.dataset.project;
+            const project = document.getElementById(projectId);
+            if (project) {
+                const offset = window.innerHeight * 0.15;
+                const targetY = project.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    /* --- BACK TO LANDING PAGE --- */
+    const headerTitle = document.querySelector('.header-text');
+    if (headerTitle) {
+        headerTitle.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
